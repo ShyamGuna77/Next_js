@@ -31,18 +31,35 @@ export default function RootLayout({
         <nav className="flex justify-between items-center p-4 bg-cyan-100 shadow-md">
           <ul className="flex space-x-4">
             <li>
-              <Link href="/auth/signin" className="text-blue-500 hover:underline">
+              <Link
+                href="/auth/signin"
+                className="text-blue-500 hover:underline"
+              >
                 Sign In
               </Link>
             </li>
             <li>
-              <Link href="/auth/signup" className="text-blue-500 hover:underline">
+              <Link
+                href="/auth/signup"
+                className="text-blue-500 hover:underline"
+              >
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link href="/auth/signup/about" className="text-blue-500 hover:underline">
+              <Link
+                href="/auth/signup/about"
+                className="text-blue-500 hover:underline"
+              >
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/users"
+                className="text-blue-500 hover:underline"
+              >
+                Users
               </Link>
             </li>
           </ul>
