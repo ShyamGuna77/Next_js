@@ -32,7 +32,7 @@ export default function RootLayout({
           <ul className="flex space-x-4">
             <li>
               <Link
-                href="/auth/signin"
+                href="/signin"
                 className="text-blue-500 hover:underline"
               >
                 Sign In
@@ -40,7 +40,7 @@ export default function RootLayout({
             </li>
             <li>
               <Link
-                href="/auth/signup"
+                href="/signup"
                 className="text-blue-500 hover:underline"
               >
                 Sign Up
@@ -48,7 +48,7 @@ export default function RootLayout({
             </li>
             <li>
               <Link
-                href="/auth/signup/about"
+                href="/signup/about"
                 className="text-blue-500 hover:underline"
               >
                 About
