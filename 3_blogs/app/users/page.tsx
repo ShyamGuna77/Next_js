@@ -2,7 +2,9 @@ import Link from "next/link";
 
 async function getUsers() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  return response.json();
+  const data = await response.json();
+    console.log(data);
+    return data
 }
 
 const Page = async () => {
