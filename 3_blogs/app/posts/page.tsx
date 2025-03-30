@@ -1,33 +1,27 @@
-const Page = async () => {
+import Link from "next/link";
+
+async function getPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await response.json();
+  return response.json();
+}
+
+const Blog = async () => {
+  const posts = await getPosts();
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <Header title="Blog Posts" />
-      <PostGrid posts={data} />
+    <div className="min-h-screen bg-gray-100 p-10">
+      <h1 className="text-4xl font-bold text-center mb-6">Blog Posts</h1>
+      <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        {posts.map((post:any) => (
+          <Link key={post.id} href={`/posts/${post.id}`}>
+            <h2 className="text-xl font-semibold text-blue-600 hover:underline cursor-pointer mb-4">
+              {post.title}
+            </h2>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
 
-const Header = ({ title }: { title: string }) => (
-  <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-8">
-    {title}
-  </h1>
-);
-
-const PostGrid = ({ posts }: { posts: any[] }) => (
-  <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {posts.map((post) => (
-      <PostCard key={post.id} post={post} />
-    ))}
-  </ul>
-);
-
-const PostCard = ({ post }: { post: any }) => (
-  <li className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow">
-    <h2 className="text-xl font-semibold text-gray-800 mb-2">{post.title}</h2>
-  </li>
-);
-
-export default Page;
+export default Blog;
