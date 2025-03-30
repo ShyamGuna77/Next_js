@@ -30,16 +30,21 @@ export default function RootLayout({
       >
         <nav className="bg-blue-500 text-black font-bold text-2xl p-4 flex justify-between items-center">
           <div>Blogs Posts</div>
-          
+
           <ul className="flex space-x-4">
             <li>
               <Link href="/todos" className="hover:underline px-4">
-          Todos
+                Todos
               </Link>
             </li>
             <li>
               <Link href="/posts" className="hover:underline px-4">
-          Posts
+                Posts
+              </Link>
+            </li>
+            <li>
+              <Link href="/users" className="hover:underline px-4">
+                Users
               </Link>
             </li>
           </ul>
