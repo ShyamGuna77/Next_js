@@ -31,18 +31,12 @@ export default function RootLayout({
         <nav className="flex justify-between items-center p-4 bg-cyan-100 shadow-md">
           <ul className="flex space-x-4">
             <li>
-              <Link
-                href="/signin"
-                className="text-blue-500 hover:underline"
-              >
+              <Link href="/signin" className="text-blue-500 hover:underline">
                 Sign In
               </Link>
             </li>
             <li>
-              <Link
-                href="/signup"
-                className="text-blue-500 hover:underline"
-              >
+              <Link href="/signup" className="text-blue-500 hover:underline">
                 Sign Up
               </Link>
             </li>
@@ -55,11 +49,18 @@ export default function RootLayout({
               </Link>
             </li>
             <li>
-              <Link
-                href="/users"
-                className="text-blue-500 hover:underline"
-              >
+              <Link href="/users" className="text-blue-500 hover:underline">
                 Users
+              </Link>
+            </li>
+            <li>
+              <Link href="/posts/1" className="text-blue-500 hover:underline">
+                Posts
+              </Link>
+            </li>
+            <li>
+              <Link href="/data" className="text-blue-500 hover:underline">
+                data
               </Link>
             </li>
           </ul>
