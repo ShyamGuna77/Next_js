@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 async function getUser(id: string) {
-  // Fix the URL - you need a slash between 'users' and the id
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const data = await response.json();
 
