@@ -16,7 +16,7 @@ const TodoItem = ({todo,toggleTodo,deleteTodo,editTodo}:TodoItemProps) => {
 
     const handleForm = () => {
         if(editText.trim() && editText!== todo.text){
-            editTodo(todo.id,todo.text)
+            editTodo(todo.id,editText)
         }else {
             seteditText(todo.text)
         }
