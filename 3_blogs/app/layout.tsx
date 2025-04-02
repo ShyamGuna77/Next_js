@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+// import DashboardPage from "./@dashboard/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,8 +21,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  dashboard,
+  teams
 }: Readonly<{
   children: React.ReactNode;
+  dashboard: React.ReactNode,
+  teams: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -29,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="bg-blue-500 text-black font-bold text-2xl p-4 flex justify-between items-center">
-          <div>Blogs Posts</div>
+          <Link href="/">Blog Posts</Link>
 
           <ul className="flex space-x-4">
             <li>
@@ -50,6 +55,10 @@ export default function RootLayout({
           </ul>
         </nav>
         {children}
+        <main>
+          <aside>{dashboard}</aside>
+         <p> {teams}</p>
+        </main>
       </body>
     </html>
   );
