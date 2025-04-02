@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import TodoItem from "./components/TodoItem";
+
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { Todo,FilterdTodos } from "./types/todo";
@@ -30,10 +30,27 @@ export default function Home() {
       const deleteTodo = (id: string) => {
         setTodos(todos.filter((todo) => todo.id !== id));
       };
-  return (
-    <div>
-      <h2 className="text-xl font-bold m-6 p-6 text-center text-blue-500">Todo APP</h2>
 
-    </div>
+      const editTodo = (id:string,text:string)=> {
+         setTodos(
+           todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
+         );
+      }
+
+  return (
+    <main className="min-h-screen bg-gray-100 py-8">
+      <div className="max-w-lg mx-auto p-4">
+        <h1 className="text-3xl font-bold text-center mb-6">Todo App</h1>
+        <TodoForm addTodo={addTodo} />
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+          editTodo={editTodo}
+          filter={filter}
+          setFilter={setFiletr}
+        />
+      </div>
+    </main>
   );
 }
